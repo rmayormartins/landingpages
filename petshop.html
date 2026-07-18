@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f5f0; --ink:#2d2926; --dim:#6b6560; --accent:#e07b39; --accent-bright:#f0935a; --accent-soft:rgba(224,123,57,.10);
-  --line:#e8e2d9; --line-light:#f0ebe3; --card:#fff; --sh:0 16px 48px rgba(45,41,38,.08); --sh-s:0 8px 24px rgba(45,41,38,.06);
-  --r:22px;
+  --bg:#fdf8f3; --ink:#3d2e24; --dim:#8a7568; --accent:#e07b39; --accent-bright:#f0935a; --accent-soft:rgba(224,123,57,.10);
+  --line:#ede0d4; --line-light:#f5ebe0; --card:#fff; --sh:0 16px 48px rgba(61,46,36,.08); --sh-s:0 8px 24px rgba(61,46,36,.06);
+  --r:24px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -28,12 +28,12 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}}
 
 /* topo */
-.top{position:sticky;top:0;z-index:10;background:rgba(247,245,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:10;background:rgba(253,248,243,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:12px;padding:16px 28px}
 .mark{display:flex;align-items:center;gap:10px;flex:none}
-.mark .paw{width:36px;height:36px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:18px}
+.mark .paw{width:40px;height:40px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:20px;box-shadow:0 4px 12px rgba(224,123,57,.3)}
 .mark b{font-family:"Quicksand",sans-serif;font-weight:700;letter-spacing:-.01em;font-size:16px}
-.top a.mini{margin-left:auto;background:var(--accent);color:#fff;padding:11px 22px;border-radius:99px;font-weight:700;font-size:14px;transition:all .2s}
+.top a.mini{margin-left:auto;background:var(--accent);color:#fff;padding:11px 22px;border-radius:99px;font-weight:700;font-size:14px;transition:all .2s;box-shadow:0 4px 12px rgba(224,123,57,.25)}
 .top a.mini:hover{background:var(--accent-bright);transform:translateY(-1px)}
 
 /* hero */
@@ -50,7 +50,8 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 .chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--dim)}
 .chip::before{content:"🐾 "}
 .foto{position:relative}
-.foto::before{content:"";position:absolute;inset:-18px -18px auto auto;width:78%;height:88%;background:var(--accent-soft);border-radius:50% 50% 50% 50% / 60% 40% 60% 40%;z-index:0}
+.foto::before{content:"";position:absolute;inset:-18px -18px auto auto;width:78%;height:88%;background:var(--accent-soft);border-radius:50% 50% 50% 50% / 60% 40% 60% 40%;z-index:0;animation:blob 8s ease-in-out infinite}
+@keyframes blob{0%,100%{border-radius:50% 50% 50% 50% / 60% 40% 60% 40%}50%{border-radius:40% 60% 40% 60% / 50% 60% 40% 50%}}
 .foto img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:var(--sh);z-index:1}
 .foto .flag{position:absolute;left:-14px;bottom:30px;z-index:2;background:#fff;border-radius:16px;box-shadow:var(--sh);padding:14px 18px;font-size:13px;font-weight:800}
 .foto .flag small{display:block;font-weight:600;color:var(--dim);margin-top:2px;font-size:11px}
@@ -60,7 +61,7 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;box-shadow:var(--sh-s);transition:all .2s ease}
 .card:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:#e0d5c8}
-.card .icon{width:48px;height:48px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:16px;font-size:24px}
+.card .icon{width:52px;height:52px;border-radius:16px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:16px;font-size:26px}
 .card h3{font-size:17px;font-weight:800;margin-bottom:8px}
 .card p{color:var(--dim);font-size:14.5px;line-height:1.6}
 
@@ -70,7 +71,7 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 .passo{background:#fff;border-radius:20px;padding:24px 26px;box-shadow:var(--sh-s);display:flex;gap:16px;align-items:flex-start;transition:transform .2s}
 .passo:hover{transform:translateX(4px)}
 .passo + .passo{margin-top:14px}
-.passo .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px}
+.passo .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;box-shadow:0 4px 12px rgba(224,123,57,.3)}
 .passo h3{font-size:17px;font-weight:800;margin-bottom:4px}
 .passo p{color:var(--dim);font-size:14.5px;line-height:1.6}
 .passos .foto2{position:relative}
@@ -86,8 +87,8 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 
 /* faixa foto */
 .band{position:relative;height:min(48vh,380px);overflow:hidden;border-radius:0}
-.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.05)}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(247,245,240,.85) 0%,rgba(247,245,240,.3) 50%,rgba(247,245,240,.85) 100%)}
+.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.05)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(253,248,243,.85) 0%,rgba(253,248,243,.3) 50%,rgba(253,248,243,.85) 100%)}
 .band .quote{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 24px;z-index:2}
 .band .quote p{font-family:"Quicksand",sans-serif;font-weight:700;font-size:clamp(22px,3.4vw,34px);max-width:600px;line-height:1.35;color:var(--ink)}
 .band .quote span{display:block;margin-top:14px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
@@ -104,18 +105,19 @@ h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-sp
 footer.rodape{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--dim);font-size:13px}
 footer.rodape a{color:var(--accent);font-weight:800}
 
-.zap{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(45,41,38,.2);z-index:20;transition:transform .2s}
+.zap{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(61,46,36,.2);z-index:20;transition:transform .2s}
 .zap:hover{transform:scale(1.07)}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}.cta:hover{transform:none}}
 </style>
+<base target="_blank">
 </head>
 <body>
 
 <nav class="top">
   <div class="wrap">
     <div class="mark">
-      <div class="paw">🐾</div>
+      <div class="paw">🦁</div>
       <b>Leão Mansinho</b>
     </div>
     <a class="mini" data-wa href="#">Agendar banho</a>
@@ -136,8 +138,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       </div>
     </div>
     <div class="foto">
-      <img src="https://media.istockphoto.com/id/1473640582/photo/garage-mechanic-african-black-male-professional-working-car-auto-service-checking-engine-oil.jpg?s=612x612&w=0" alt="Cachorro feliz no pet shop" onerror="this.style.display='none'">
-      <div class="flag">Hotelzinho<small>diária com fotos no WhatsApp</small></div>
+      <img src="https://static.vecteezy.com/system/resources/previews/026/324/760/non_2x/cute-lion-take-bath-cartoon-character-free-vector.jpg" alt="Leão fofo tomando banho" onerror="this.style.display='none'">
+      <div class="flag">🛁 Hotelzinho<small>diária com fotos no WhatsApp</small></div>
     </div>
   </div>
 </header>
@@ -191,13 +193,13 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
       <div class="passo"><span class="n">3</span><div><h3>Leve feliz pra casa</h3><p>Pet limpo, cheiroso e feliz. Você recebe fotos do processo.</p></div></div>
     </div>
     <div class="foto2">
-      <img src="https://static.wixstatic.com/media/ece872ca823c1c173d646b9caad0cb9666b05e42.jpg" alt="Gato sendo cuidado no pet shop" loading="lazy" onerror="this.style.display='none'">
+      <img src="https://www.shutterstock.com/image-vector/cute-dog-cat-cartoon-260nw-2735651019.jpg" alt="Cachorro e gatinho fofos juntos" loading="lazy" onerror="this.style.display='none'">
     </div>
   </div>
 </div>
 
 <div class="band">
-  <img src="https://static.vecteezy.com/system/resources/previews/005/448/020/large_2x/pet-grooming-for-dogs-and-cats-in-flat-cartoon-hand-drawn-background-illustration-the-main-tools-which-are-used-in-beauty-salon-for-poster-or-banner.jpg" alt="Ambiente do pet shop" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://img.freepik.com/free-vector/cute-pet-shop-with-dogs-cats_23-2148523805.jpg" alt="Pet shop fofo com cachorros e gatos" loading="lazy" onerror="this.style.display='none'">
   <div class="quote">
     <p>"Aqui seu pet é tratado como parte da família."<span>A regra da casa</span></p>
   </div>
@@ -233,7 +235,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 <section class="fim">
   <div class="wrap rev">
-    <h2>Seu pet vai adorar.</h2>
+    <h2>Seu pet vai adorar. 🐾</h2>
     <p>Agende o banho ou o hotelzinho pelo WhatsApp. A primeira visita é um presente para vocês dois.</p>
     <a class="cta" data-wa href="#">Agendar agora</a>
   </div>
