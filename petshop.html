@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leão Mansinho · Pet Shop em São José/SC</title>
+<meta name="description" content="Pet shop em São José/SC. Banho, tosa, hotelzinho e veterinário. Cuidado com carinho para cães e gatos. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --ink:#2d2926; --dim:#6b6560; --accent:#e07b39; --accent-bright:#f0935a; --accent-soft:rgba(224,123,57,.10);
+  --line:#e8e2d9; --line-light:#f0ebe3; --card:#fff; --sh:0 16px 48px rgba(45,41,38,.08); --sh-s:0 8px 24px rgba(45,41,38,.06);
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Nunito",system-ui,sans-serif;font-size:16.5px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;border-radius:var(--r)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:800}
+section{padding:90px 0}
+h2{font-size:clamp(28px,4.2vw,40px);font-weight:800;margin:12px 0 40px;letter-spacing:-.02em}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}}
+
+/* topo */
+.top{position:sticky;top:0;z-index:10;background:rgba(247,245,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding:16px 28px}
+.mark{display:flex;align-items:center;gap:10px;flex:none}
+.mark .paw{width:36px;height:36px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:18px}
+.mark b{font-family:"Quicksand",sans-serif;font-weight:700;letter-spacing:-.01em;font-size:16px}
+.top a.mini{margin-left:auto;background:var(--accent);color:#fff;padding:11px 22px;border-radius:99px;font-weight:700;font-size:14px;transition:all .2s}
+.top a.mini:hover{background:var(--accent-bright);transform:translateY(-1px)}
+
+/* hero */
+.hero{padding:80px 0 70px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,56px);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin:18px 0 18px;font-family:"Quicksand",sans-serif}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{color:var(--dim);max-width:460px;margin-bottom:34px;font-size:18px;line-height:1.65}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:800;padding:17px 32px;border-radius:99px;font-size:15px;box-shadow:var(--sh-s);transition:all .2s}
+.cta:hover{background:var(--accent-bright);transform:translateY(-2px);box-shadow:var(--sh)}
+.cta.sec{background:#fff;color:var(--accent);border:1.5px solid var(--accent);box-shadow:none;margin-left:12px}
+.cta.sec:hover{background:var(--accent-soft)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--dim)}
+.chip::before{content:"🐾 "}
+.foto{position:relative}
+.foto::before{content:"";position:absolute;inset:-18px -18px auto auto;width:78%;height:88%;background:var(--accent-soft);border-radius:50% 50% 50% 50% / 60% 40% 60% 40%;z-index:0}
+.foto img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:var(--sh);z-index:1}
+.foto .flag{position:absolute;left:-14px;bottom:30px;z-index:2;background:#fff;border-radius:16px;box-shadow:var(--sh);padding:14px 18px;font-size:13px;font-weight:800}
+.foto .flag small{display:block;font-weight:600;color:var(--dim);margin-top:2px;font-size:11px}
+@media(max-width:900px){.hero .grid{grid-template-columns:1fr;gap:50px}.foto{max-width:440px;margin:0 auto}.cta.sec{margin-left:0;margin-top:12px}}
+
+/* serviços */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;box-shadow:var(--sh-s);transition:all .2s ease}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:#e0d5c8}
+.card .icon{width:48px;height:48px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:16px;font-size:24px}
+.card h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.card p{color:var(--dim);font-size:14.5px;line-height:1.6}
+
+/* como funciona */
+.passos{background:var(--accent-soft);border-radius:36px;margin:0 24px}
+.passos .inner{max-width:1100px;margin:0 auto;padding:72px 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.passo{background:#fff;border-radius:20px;padding:24px 26px;box-shadow:var(--sh-s);display:flex;gap:16px;align-items:flex-start;transition:transform .2s}
+.passo:hover{transform:translateX(4px)}
+.passo + .passo{margin-top:14px}
+.passo .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px}
+.passo h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.passo p{color:var(--dim);font-size:14.5px;line-height:1.6}
+.passos .foto2{position:relative}
+.passos .foto2 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;box-shadow:var(--sh)}
+.passos .foto2::before{content:"";position:absolute;inset:-14px -14px auto auto;width:70%;height:80%;background:var(--accent-soft);border-radius:24px;z-index:-1}
+@media(max-width:900px){.passos{margin:0 14px;border-radius:28px}.passos .inner{grid-template-columns:1fr;padding:52px 24px}.passos .foto2{display:none}}
+
+/* depoimentos */
+.dep blockquote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;font-size:15.5px;box-shadow:var(--sh-s);transition:transform .2s}
+.dep blockquote:hover{transform:translateY(-3px)}
+.dep .st{color:var(--accent);letter-spacing:.18em;display:block;margin-bottom:12px;font-size:13px}
+.dep footer{margin-top:16px;color:var(--dim);font-size:13px;font-weight:700}
+
+/* faixa foto */
+.band{position:relative;height:min(48vh,380px);overflow:hidden;border-radius:0}
+.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.05)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(247,245,240,.85) 0%,rgba(247,245,240,.3) 50%,rgba(247,245,240,.85) 100%)}
+.band .quote{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 24px;z-index:2}
+.band .quote p{font-family:"Quicksand",sans-serif;font-weight:700;font-size:clamp(22px,3.4vw,34px);max-width:600px;line-height:1.35;color:var(--ink)}
+.band .quote span{display:block;margin-top:14px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:800}
+
+/* local e fim */
+.local .box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;box-shadow:var(--sh-s)}
+.local h3{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:10px}
+.local p{color:var(--dim);font-size:15px;line-height:1.65}
+.local a.map{display:inline-block;margin-top:14px;color:var(--accent);font-weight:800;border-bottom:2px solid var(--accent);transition:opacity .2s}
+.local a.map:hover{opacity:.7}
+@media(max-width:700px){.local .box{grid-template-columns:1fr;padding:30px}}
+.fim{text-align:center;padding-bottom:100px}
+.fim p{color:var(--dim);max-width:440px;margin:10px auto 32px;font-size:16px}
+footer.rodape{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--dim);font-size:13px}
+footer.rodape a{color:var(--accent);font-weight:800}
+
+.zap{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(45,41,38,.2);z-index:20;transition:transform .2s}
+.zap:hover{transform:scale(1.07)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}.cta:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="mark">
+      <div class="paw">🐾</div>
+      <b>Leão Mansinho</b>
+    </div>
+    <a class="mini" data-wa href="#">Agendar banho</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Pet Shop · Kobrasol, São José/SC</span>
+      <h1>Seu pet merece <em>carinho de verdade.</em></h1>
+      <p class="lead">Banho, tosa, hotelzinho e atendimento veterinário. Tudo com paciência, cuidado e muito amor para cães e gatos.</p>
+      <a class="cta" data-wa href="#">Agendar pelo WhatsApp</a><a class="cta sec" href="#servicos">Ver serviços</a>
+      <div class="chips">
+        <span class="chip">Cães e gatos</span>
+        <span class="chip">Produtos naturais</span>
+        <span class="chip">Ambiente climatizado</span>
+      </div>
+    </div>
+    <div class="foto">
+      <img src="https://media.istockphoto.com/id/1473640582/photo/garage-mechanic-african-black-male-professional-working-car-auto-service-checking-engine-oil.jpg?s=612x612&w=0" alt="Cachorro feliz no pet shop" onerror="this.style.display='none'">
+      <div class="flag">Hotelzinho<small>diária com fotos no WhatsApp</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="wrap rev">
+    <span class="eyebrow">Serviços</span>
+    <h2>O que fazemos pelo seu pet</h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">🛁</div>
+        <h3>Banho completo</h3>
+        <p>Shampoo e condicionador de qualidade, secagem cuidadosa e cheirinho de limpo.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✂️</div>
+        <h3>Tosa higiênica</h3>
+        <p>Tosa na máquina ou tesoura, conforme a raça e o estilo que você prefere.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏠</div>
+        <h3>Hotelzinho</h3>
+        <p>Diária com passeios, alimentação e fotos no WhatsApp para você acompanhar.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💉</div>
+        <h3>Vacinação</h3>
+        <p>Calendário de vacinas atualizado e lembretes para não perder nenhuma dose.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🦷</div>
+        <h3>Tártaro e unha</h3>
+        <p>Limpeza de tártaro e corte de unhas com cuidado para não estressar o bichinho.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛒</div>
+        <h3>Pet shop</h3>
+        <p>Rações, petiscos, brinquedos e acessórios. Tudo que seu pet precisa em um lugar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="passos rev">
+  <div class="inner">
+    <div>
+      <span class="eyebrow">Simples assim</span>
+      <h2>Como funciona</h2>
+      <div class="passo"><span class="n">1</span><div><h3>Chame no WhatsApp</h3><p>Conte qual é o pet, o serviço e a data que prefere.</p></div></div>
+      <div class="passo"><span class="n">2</span><div><h3>Traga o bichinho</h3><p>Chegue na hora marcada. A gente cuida de tudo com carinho.</p></div></div>
+      <div class="passo"><span class="n">3</span><div><h3>Leve feliz pra casa</h3><p>Pet limpo, cheiroso e feliz. Você recebe fotos do processo.</p></div></div>
+    </div>
+    <div class="foto2">
+      <img src="https://static.wixstatic.com/media/ece872ca823c1c173d646b9caad0cb9666b05e42.jpg" alt="Gato sendo cuidado no pet shop" loading="lazy" onerror="this.style.display='none'">
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <img src="https://static.vecteezy.com/system/resources/previews/005/448/020/large_2x/pet-grooming-for-dogs-and-cats-in-flat-cartoon-hand-drawn-background-illustration-the-main-tools-which-are-used-in-beauty-salon-for-poster-or-banner.jpg" alt="Ambiente do pet shop" loading="lazy" onerror="this.style.display='none'">
+  <div class="quote">
+    <p>"Aqui seu pet é tratado como parte da família."<span>A regra da casa</span></p>
+  </div>
+</div>
+
+<section class="dep">
+  <div class="wrap rev">
+    <span class="eyebrow">Tutores</span>
+    <h2>Quem confia no Leão Mansinho</h2>
+    <div class="grid3">
+      <blockquote><span class="st">★★★★★</span>Meu golden volta feliz toda vez. Eles mandam foto no banho, é um charme.<footer>Fernanda L. · Kobrasol</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Deixei minha gata no hotelzinho por uma semana. Recebia foto todo dia.<footer>Marcos T. · Campinas</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Produtos naturais, sem perfume forte. Meu cachorro alérgico nunca teve problema.<footer>Juliana R. · Barreiros</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="wrap rev">
+    <div class="box">
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Exemplo, 321 · Kobrasol<br>São José/SC</p>
+        <a class="map" href="https://maps.google.com/?q=Kobrasol,+S%C3%A3o+Jos%C3%A9+SC" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+      <div>
+        <h3>Horários</h3>
+        <p>Segunda a sexta · 8h às 19h<br>Sábado · 8h às 14h<br>Domingo · fechado</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fim">
+  <div class="wrap rev">
+    <h2>Seu pet vai adorar.</h2>
+    <p>Agende o banho ou o hotelzinho pelo WhatsApp. A primeira visita é um presente para vocês dois.</p>
+    <a class="cta" data-wa href="#">Agendar agora</a>
+  </div>
+</section>
+
+<footer class="rodape">
+  Leão Mansinho · página modelo com conteúdo fictício ·
+  <a href="index.html">quer uma página assim para o seu pet shop?</a>
+</footer>
+
+<a class="zap" data-wa href="#" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.9 2.4 6.8L5 29l8.1-2.1c.9.3 1.9.4 2.9.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"/><path fill="#25d366" d="M12.9 9.9c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.4 6.9 6 3.4 1.3 4.1 1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4-.3-.2-2-1-2.6-1.2-.3-.1-.6-.2-.9.1-.2.3-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-2.4-1.2-4-2.7-5.1-5-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.8.2-.3.1-.6 0-.8-.1-.2-.7-1.9-1-2.8z"/></svg>
+</a>
+
+<script>
+const WHATS = "5548999999999";
+const MSG = "Olá! Vi a página do Leão Mansinho e quero agendar um serviço.";
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(MSG);
+  a.target = "_blank"; a.rel = "noopener";
+});
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rev").forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Cabelo · Salão de Beleza em São José/SC</title>
+<meta name="description" content="Salão de beleza em São José/SC. Corte, coloração, manicure, pedicure e tratamentos capilares. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff5f7; --ink:#2d1f24; --dim:#7a5e68; --accent:#e85a8a; --accent-bright:#f0709e; --accent-soft:rgba(232,90,138,.10);
+  --line:#f0d5dc; --line-light:#f8e8ed; --card:#fff; --sh:0 20px 56px rgba(232,90,138,.10); --sh-s:0 10px 28px rgba(232,90,138,.07);
+  --r:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:16px;line-height:1.7}
+h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;border-radius:var(--r)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:700}
+section{padding:90px 0}
+h2{font-size:clamp(28px,4.2vw,40px);font-weight:700;margin:12px 0 40px;letter-spacing:-.01em}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}}
+
+/* topo */
+.top{position:sticky;top:0;z-index:10;background:rgba(255,245,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding:16px 28px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 5px rgba(232,90,138,.15)}
+.top b{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.01em;font-size:16px}
+.top a.mini{margin-left:auto;background:var(--accent);color:#fff;padding:11px 24px;border-radius:99px;font-weight:700;font-size:14px;transition:all .2s}
+.top a.mini:hover{background:var(--accent-bright);transform:translateY(-1px)}
+
+/* hero */
+.hero{padding:80px 0 70px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,56px);font-weight:700;line-height:1.08;letter-spacing:-.02em;margin:18px 0 18px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p.lead{color:var(--dim);max-width:460px;margin-bottom:34px;font-size:18px;line-height:1.65}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;padding:17px 34px;border-radius:99px;font-size:15px;box-shadow:var(--sh-s);transition:all .2s}
+.cta:hover{background:var(--accent-bright);transform:translateY(-2px);box-shadow:var(--sh)}
+.cta.sec{background:#fff;color:var(--accent);border:1.5px solid var(--accent);box-shadow:none;margin-left:12px}
+.cta.sec:hover{background:var(--accent-soft)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--dim)}
+.chip::before{content:"✨ "}
+.foto{position:relative}
+.foto::before{content:"";position:absolute;inset:-20px -20px auto auto;width:78%;height:88%;background:var(--accent-soft);border-radius:50% 50% 50% 50% / 60% 40% 60% 40%;z-index:0;animation:blob 8s ease-in-out infinite}
+@keyframes blob{0%,100%{border-radius:50% 50% 50% 50% / 60% 40% 60% 40%}50%{border-radius:40% 60% 40% 60% / 50% 60% 40% 50%}}
+.foto img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:var(--sh);z-index:1}
+.foto .flag{position:absolute;left:-16px;bottom:34px;z-index:2;background:#fff;border-radius:18px;box-shadow:var(--sh);padding:14px 18px;font-size:13px;font-weight:700}
+.foto .flag small{display:block;font-weight:600;color:var(--dim);margin-top:2px;font-size:11px}
+@media(max-width:900px){.hero .grid{grid-template-columns:1fr;gap:50px}.foto{max-width:440px;margin:0 auto}.cta.sec{margin-left:0;margin-top:12px}}
+
+/* serviços */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;box-shadow:var(--sh-s);transition:all .2s ease}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:#f0b8c8}
+.card .icon{width:48px;height:48px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:18px;font-size:24px}
+.card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.card p{color:var(--dim);font-size:14.5px;line-height:1.6}
+
+/* como funciona */
+.passos{background:var(--accent-soft);border-radius:40px;margin:0 24px}
+.passos .inner{max-width:1100px;margin:0 auto;padding:72px 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.passo{background:#fff;border-radius:20px;padding:24px 26px;box-shadow:var(--sh-s);display:flex;gap:16px;align-items:flex-start;transition:transform .2s}
+.passo:hover{transform:translateX(4px)}
+.passo + .passo{margin-top:14px}
+.passo .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px;box-shadow:0 4px 12px rgba(232,90,138,.3)}
+.passo h3{font-size:17px;font-weight:700;margin-bottom:4px}
+.passo p{color:var(--dim);font-size:14.5px;line-height:1.6}
+.passos .foto2{position:relative}
+.passos .foto2 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;box-shadow:var(--sh)}
+.passos .foto2::before{content:"";position:absolute;inset:-14px -14px auto auto;width:70%;height:80%;background:var(--accent-soft);border-radius:24px;z-index:-1}
+@media(max-width:900px){.passos{margin:0 14px;border-radius:28px}.passos .inner{grid-template-columns:1fr;padding:52px 24px}.passos .foto2{display:none}}
+
+/* depoimentos */
+.dep blockquote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;font-size:15.5px;box-shadow:var(--sh-s);transition:transform .2s}
+.dep blockquote:hover{transform:translateY(-3px)}
+.dep .st{color:var(--accent);letter-spacing:.18em;display:block;margin-bottom:12px;font-size:13px}
+.dep footer{margin-top:16px;color:var(--dim);font-size:13px;font-weight:700}
+
+/* faixa foto */
+.band{position:relative;height:min(48vh,380px);overflow:hidden;border-radius:0}
+.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.05)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(255,245,247,.85) 0%,rgba(255,245,247,.3) 50%,rgba(255,245,247,.85) 100%)}
+.band .quote{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 24px;z-index:2}
+.band .quote p{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(22px,3.4vw,34px);max-width:600px;line-height:1.35;color:var(--ink)}
+.band .quote span{display:block;margin-top:14px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700}
+
+/* local e fim */
+.local .box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;box-shadow:var(--sh-s)}
+.local h3{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+.local p{color:var(--dim);font-size:15px;line-height:1.65}
+.local a.map{display:inline-block;margin-top:14px;color:var(--accent);font-weight:700;border-bottom:2px solid var(--accent);transition:opacity .2s}
+.local a.map:hover{opacity:.7}
+@media(max-width:700px){.local .box{grid-template-columns:1fr;padding:30px}}
+.fim{text-align:center;padding-bottom:100px}
+.fim p{color:var(--dim);max-width:440px;margin:10px auto 32px;font-size:16px}
+footer.rodape{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--dim);font-size:13px}
+footer.rodape a{color:var(--accent);font-weight:700}
+
+.zap{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 28px rgba(232,90,138,.2);z-index:20;transition:transform .2s}
+.zap:hover{transform:scale(1.07)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}.cta:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <b>Bella Cabelo</b>
+    <a class="mini" data-wa href="#">Agendar horário</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Salão de Beleza · Campinas, São José/SC</span>
+      <h1>Beleza que <em>transmite confiança.</em></h1>
+      <p class="lead">Corte, coloração, manicure, pedicure e tratamentos capilares. Tudo com produtos de qualidade e profissionais que entendem do seu cabelo.</p>
+      <a class="cta" data-wa href="#">Agendar pelo WhatsApp</a><a class="cta sec" href="#servicos">Ver serviços</a>
+      <div class="chips">
+        <span class="chip">Produtos de salão</span>
+        <span class="chip">Ambiente climatizado</span>
+        <span class="chip">Atendimento personalizado</span>
+      </div>
+    </div>
+    <div class="foto">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop" alt="Cliente no salão de beleza" onerror="this.style.display='none'">
+      <div class="flag">Promoção<small>20% off na primeira visita</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="wrap rev">
+    <span class="eyebrow">Serviços</span>
+    <h2>O que fazemos por você</h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">💇‍♀️</div>
+        <h3>Corte e styling</h3>
+        <p>Corte feminino, masculino e infantil. Finalização com escova, prancha ou babyliss.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Coloração</h3>
+        <p>Mechas, luzes, coloração global e tonalizante. Produtos que cuidam do fio.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Tratamentos capilares</h3>
+        <p>Hidratação, reconstrução, botox capilar e cauterização para fios saudáveis.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💅</div>
+        <h3>Manicure e pedicure</h3>
+        <p>Esmaltação em gel, alongamento, nail art e spa dos pés com cuidado total.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🪒</div>
+        <h3>Depilação</h3>
+        <p>Depilação com cera quente e roll-on. Cera hipoalergênica para peles sensíveis.</p>
+      </div>
+      <div class="card">
+        <div class="icon">👰</div>
+        <h3>Dia da noiva</h3>
+        <p>Penteado, maquiagem e cuidados especiais para o seu dia mais importante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="passos rev">
+  <div class="inner">
+    <div>
+      <span class="eyebrow">Simples assim</span>
+      <h2>Como funciona</h2>
+      <div class="passo"><span class="n">1</span><div><h3>Chame no WhatsApp</h3><p>Conte qual serviço quer e o horário que prefere.</p></div></div>
+      <div class="passo"><span class="n">2</span><div><h3>Venha relaxar</h3><p>Café, revistas e ambiente tranquilo enquanto cuidamos de você.</p></div></div>
+      <div class="passo"><span class="n">3</span><div><h3>Saia renovada</h3><p>Resultado que dura e produtos para manter em casa.</p></div></div>
+    </div>
+    <div class="foto2">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop" alt="Ambiente do salão" loading="lazy" onerror="this.style.display='none'">
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=1800&auto=format&fit=crop" alt="Salão de beleza" loading="lazy" onerror="this.style.display='none'">
+  <div class="quote">
+    <p>"Seu cabelo é a coroa que você nunca tira."<span>Bella Cabelo</span></p>
+  </div>
+</div>
+
+<section class="dep">
+  <div class="wrap rev">
+    <span class="eyebrow">Clientes</span>
+    <h2>Quem já brilhou por aqui</h2>
+    <div class="grid3">
+      <blockquote><span class="st">★★★★★</span>Saio do salão me sentindo outra pessoa. A equipe entende exatamente o que eu quero.<footer>Camila T. · Campinas</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Minha coloração durou 3 meses perfeita. Nunca vi tinta tão boa.<footer>Patrícia M. · Kobrasol</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Levo minha mãe e minha filha. Atendem as três gerações com igual carinho.<footer>Fernanda R. · Barreiros</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="wrap rev">
+    <div class="box">
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Exemplo, 888 · Campinas<br>São José/SC</p>
+        <a class="map" href="https://maps.google.com/?q=Campinas,+S%C3%A3o+Jos%C3%A9+SC" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+      <div>
+        <h3>Horários</h3>
+        <p>Segunda a sexta · 9h às 20h<br>Sábado · 9h às 18h<br>Domingo · fechado</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fim">
+  <div class="wrap rev">
+    <h2>Você merece esse momento.</h2>
+    <p>Agende seu horário pelo WhatsApp. A primeira visita tem 20% de desconto.</p>
+    <a class="cta" data-wa href="#">Agendar minha visita</a>
+  </div>
+</section>
+
+<footer class="rodape">
+  Bella Cabelo · página modelo com conteúdo fictício ·
+  <a href="index.html">quer uma página assim para o seu salão?</a>
+</footer>
+
+<a class="zap" data-wa href="#" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.9 2.4 6.8L5 29l8.1-2.1c.9.3 1.9.4 2.9.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"/><path fill="#25d366" d="M12.9 9.9c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.4 6.9 6 3.4 1.3 4.1 1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4-.3-.2-2-1-2.6-1.2-.3-.1-.6-.2-.9.1-.2.3-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-2.4-1.2-4-2.7-5.1-5-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.8.2-.3.1-.6 0-.8-.1-.2-.7-1.9-1-2.8z"/></svg>
+</a>
+
+<script>
+const WHATS = "5548999999999";
+const MSG = "Olá! Vi a página do Bella Cabelo e quero agendar um horário.";
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(MSG);
+  a.target = "_blank"; a.rel = "noopener";
+});
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rev").forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
