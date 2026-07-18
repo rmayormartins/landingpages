@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torque Auto Center · Mecânica em São José/SC</title>
+<meta name="description" content="Oficina mecânica em São José/SC. Diagnóstico transparente com foto e vídeo, garantia de 90 dias e orçamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c0d; --panel:#131517; --panel2:#17191c; --ink:#f1f2f3; --dim:#9aa1a8;
+  --yel:#ffcd11; --yel-soft:rgba(255,205,17,.10); --line:#24272b;
+  --hazard:repeating-linear-gradient(-45deg,#ffcd11 0 12px,#0b0c0d 12px 24px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16.5px;line-height:1.7}
+h1,h2,.disp{font-family:"Archivo Black",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.005em;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--yel);font-weight:700}
+.hazard{height:5px;background:var(--hazard)}
+section{padding:92px 0}
+h2{font-size:clamp(26px,4.4vw,40px);margin:14px 0 40px;line-height:1.14}
+h2 span{color:var(--yel)}
+.rev{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}}
+
+/* topo */
+.top{position:sticky;top:0;z-index:10;background:rgba(11,12,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px}
+.mark{background:var(--yel);color:#0b0c0d;font-family:"Archivo Black",sans-serif;padding:5px 10px;font-size:14px;flex:none}
+.top b{font-family:"Archivo Black",sans-serif;font-weight:400;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.top a.mini{margin-left:auto;background:var(--yel);color:#0b0c0d;padding:9px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;transition:filter .15s}
+.top a.mini:hover{filter:brightness(1.08)}
+
+/* hero com foto de fundo */
+.hero{position:relative;min-height:min(88vh,760px);display:grid;align-items:center;overflow:hidden;padding:110px 0}
+.hero .bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1900&auto=format&fit=crop") center/cover no-repeat;filter:grayscale(1) contrast(1.12) brightness(.42)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,12,13,.96) 0%,rgba(11,12,13,.82) 42%,rgba(11,12,13,.35) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(34px,6.4vw,64px);line-height:1.06;margin:18px 0 20px;max-width:820px}
+.hero h1 span{color:var(--yel)}
+.hero p.lead{color:var(--dim);max-width:540px;font-size:18px;margin-bottom:36px}
+.cta{display:inline-block;background:var(--yel);color:#0b0c0d;font-weight:800;padding:18px 34px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;transition:filter .15s,transform .15s}
+.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:38px}
+.badge{border-left:3px solid var(--yel);padding:2px 0 2px 14px;font-size:13.5px;color:var(--dim)}
+.badge b{display:block;color:var(--ink);font-size:15px}
+
+/* servicos */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);padding:26px 24px;transition:transform .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--yel)}
+.card h3{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.card h3::before{content:"";width:7px;height:7px;background:var(--yel);flex:none}
+.card p{color:var(--dim);font-size:14.5px}
+
+/* etapas numeradas */
+.proc{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proc .grid3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px}
+.et .n{font-family:"Archivo Black",sans-serif;font-size:44px;color:var(--yel);line-height:1}
+.et h3{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:15px;letter-spacing:.05em;text-transform:uppercase;margin:14px 0 8px}
+.et p{color:var(--dim);font-size:14.5px}
+
+/* faixa de foto */
+.band{position:relative;height:min(46vh,340px);overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.5)}
+.band .tag{position:absolute;left:0;bottom:0;background:var(--yel);color:#0b0c0d;font-family:"Archivo Black",sans-serif;font-size:clamp(12px,1.8vw,15px);letter-spacing:.08em;text-transform:uppercase;padding:14px 22px}
+
+/* depoimentos */
+.dep blockquote{background:var(--panel);border:1px solid var(--line);padding:26px;font-size:15px}
+.dep .st{color:var(--yel);letter-spacing:.22em;display:block;margin-bottom:12px;font-size:12px}
+.dep footer{margin-top:14px;color:var(--dim);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* local e fim */
+.local .box{background:var(--panel);border:1px solid var(--line);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.local h3{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--yel);margin-bottom:12px;font-weight:700}
+.local p{color:var(--dim);font-size:15px}
+.local a.map{display:inline-block;margin-top:14px;color:var(--yel);border-bottom:2px solid var(--yel);font-size:13px;font-weight:700;letter-spacing:.04em}
+@media(max-width:700px){.local .box{grid-template-columns:1fr;padding:30px}}
+.fim{text-align:center;padding:100px 0 120px}
+.fim p{color:var(--dim);max-width:480px;margin:12px auto 34px}
+footer.rodape{border-top:1px solid var(--line);padding:28px 0 96px;text-align:center;color:var(--dim);font-size:13px}
+footer.rodape a{color:var(--yel);font-weight:700}
+
+/* barra fixa mobile */
+.fixabar{position:fixed;left:0;right:0;bottom:0;z-index:19;display:none;background:var(--yel);color:#0b0c0d;text-align:center;padding:16px;font-family:"Archivo Black",sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:13px}
+@media(max-width:700px){.fixabar{display:block}}
+
+.zap{position:fixed;right:18px;bottom:78px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.55);z-index:20;transition:transform .15s}
+@media(min-width:701px){.zap{bottom:20px}}
+.zap:hover{transform:scale(1.07)}
+a:focus-visible{outline:2px solid var(--yel);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}.cta:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="mark">T</span>
+    <b>Torque Auto Center</b>
+    <a class="mini" data-wa href="#">Orçamento</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow">Mecânica · Barreiros, São José/SC</span>
+    <h1>Orçamento na hora.<br><span>Serviço com garantia.</span></h1>
+    <p class="lead">Diagnóstico transparente: você recebe foto e vídeo do problema no seu WhatsApp antes de aprovar qualquer serviço. Sem surpresa na retirada.</p>
+    <a class="cta" data-wa href="#">Pedir orçamento no WhatsApp</a>
+    <div class="badges">
+      <div class="badge"><b>90 dias</b>de garantia no serviço</div>
+      <div class="badge"><b>Nota fiscal</b>em todas as peças</div>
+      <div class="badge"><b>Prazo</b>combinado e cumprido</div>
+    </div>
+  </div>
+</header>
+
+<section id="servicos">
+  <div class="wrap rev">
+    <span class="eyebrow">O que fazemos</span>
+    <h2>Serviços</h2>
+    <div class="grid3">
+      <div class="card"><h3>Revisão completa</h3><p>Checklist de 40 itens com relatório do que está bom e do que pede atenção.</p></div>
+      <div class="card"><h3>Freios</h3><p>Pastilhas, discos e fluido. Segurança não se adia.</p></div>
+      <div class="card"><h3>Suspensão</h3><p>Amortecedores, buchas e alinhamento para o carro parar de reclamar.</p></div>
+      <div class="card"><h3>Troca de óleo</h3><p>Óleo e filtros com registro no histórico do veículo.</p></div>
+      <div class="card"><h3>Injeção eletrônica</h3><p>Diagnóstico com scanner e limpeza de bicos.</p></div>
+      <div class="card"><h3>Ar-condicionado</h3><p>Higienização, carga de gás e reparo do sistema.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proc">
+  <div class="wrap rev">
+    <span class="eyebrow">Sem enrolação</span>
+    <h2>Como <span>trabalhamos</span></h2>
+    <div class="grid3">
+      <div class="et"><div class="n">01</div><h3>Mande o problema</h3><p>Áudio, foto ou vídeo do barulho pelo WhatsApp. A gente já adianta o diagnóstico.</p></div>
+      <div class="et"><div class="n">02</div><h3>Receba o orçamento</h3><p>Valores detalhados de peça e mão de obra, em até 1 hora útil.</p></div>
+      <div class="et"><div class="n">03</div><h3>Aprovou, agendou</h3><p>Data e hora combinadas. Você acompanha o serviço por foto e vídeo.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <!-- FOTO: bancada ou box da oficina -->
+  <img src="https://images.unsplash.com/photo-1637640125496-31852f042a60?q=80&w=1800&auto=format&fit=crop" alt="Ferramentas da oficina" loading="lazy" onerror="this.style.display='none'">
+  <div class="tag">Peças com nota · Garantia de 90 dias</div>
+</div>
+
+<section class="dep">
+  <div class="wrap rev">
+    <span class="eyebrow">Clientes</span>
+    <h2>Palavra de quem <span>confia</span></h2>
+    <div class="grid3">
+      <blockquote><span class="st">★★★★★</span>Mandaram vídeo da peça gasta antes de trocar. Nunca vi oficina fazer isso. Virei cliente.<footer>Diego L. · Barreiros</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Orçamento certeiro, carro pronto no prazo. Sem aquele "apareceu mais uma coisinha".<footer>Patrícia N. · Areias</footer></blockquote>
+      <blockquote><span class="st">★★★★★</span>Uso para os dois carros da família. Preço justo e garantia de verdade.<footer>Sérgio A. · Ipiranga</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="wrap rev">
+    <div class="box">
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Exemplo, 789 · Barreiros<br>São José/SC</p>
+        <a class="map" href="https://maps.google.com/?q=Barreiros,+S%C3%A3o+Jos%C3%A9+SC" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+      <div>
+        <h3>Horários</h3>
+        <p>Segunda a sexta · 8h às 18h<br>Sábado · 8h às 12h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fim">
+  <div class="wrap rev">
+    <span class="eyebrow">Bora resolver</span>
+    <h2>Carro com <span>barulho novo?</span></h2>
+    <p>Manda um áudio pelo WhatsApp agora. Orçamento é grátis e ninguém mexe em nada sem você aprovar.</p>
+    <a class="cta" data-wa href="#">Pedir orçamento grátis</a>
+  </div>
+</section>
+
+<footer class="rodape">
+  Torque Auto Center · página modelo com conteúdo fictício ·
+  <a href="index.html">quer uma página assim para a sua oficina?</a>
+</footer>
+
+<a class="fixabar" data-wa href="#">Pedir orçamento no WhatsApp</a>
+
+<a class="zap" data-wa href="#" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.9 2.4 6.8L5 29l8.1-2.1c.9.3 1.9.4 2.9.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"/><path fill="#25d366" d="M12.9 9.9c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.4 6.9 6 3.4 1.3 4.1 1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4-.3-.2-2-1-2.6-1.2-.3-.1-.6-.2-.9.1-.2.3-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-2.4-1.2-4-2.7-5.1-5-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.8.2-.3.1-.6 0-.8-.1-.2-.7-1.9-1-2.8z"/></svg>
+</a>
+
+<script>
+/* ===== CONFIG: troque o telefone (55 + DDD + numero) e a mensagem ===== */
+const WHATS = "5548999999999";
+const MSG = "Ol\u00e1! Vi a p\u00e1gina do Torque Auto Center e quero um or\u00e7amento.";
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(MSG);
+  a.target = "_blank"; a.rel = "noopener";
+});
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rev").forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
