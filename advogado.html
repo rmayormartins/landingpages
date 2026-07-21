@@ -3,239 +3,505 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moreira & Associados · Advocacia em São José/SC</title>
-<meta name="description" content="Escritório de advocacia em São José/SC. Direito civil, trabalhista, família e empresarial. Atendimento humanizado e transparente. Agende sua consulta pelo WhatsApp.">
+<title>Moreira & Associados | Advocacia em São José/SC</title>
+<meta name="description" content="Escritório de advocacia em São José/SC. Direito civil, trabalhista, família e empresarial. Atendimento humanizado e transparente. Agende sua consulta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0c0e12; --panel:#12151a; --panel2:#161920; --ink:#f0f1f3; --dim:#8b92a0; --dimmer:#4a5060;
-  --gold:#c9a84c; --gold-bright:#e0bc5e; --gold-soft:rgba(201,168,76,.10); --gold-glow:rgba(201,168,76,.2);
-  --line:#1e222b; --line-light:#252a35; --r:18px;
+  --bg:#0a0c10; --bg2:#0f1218; --bg3:#141820; --panel:#181c24; --panel2:#1e232d;
+  --ink:#f2f3f5; --ink2:#e8e9ec; --dim:#9ba0ad; --dimmer:#5a6070; --dim2:#3a4050;
+  --gold:#c9a84c; --gold2:#d4b55a; --gold3:#e8cc7a; --gold-soft:rgba(201,168,76,.08); --gold-glow:rgba(201,168,76,.15);
+  --line:#1e232e; --line2:#252b38; --line3:#2d3444; --r:14px; --r2:20px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.7}
-h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4,.serif{font-family:"Cormorant Garamond",Georgia,serif}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%;border-radius:var(--r)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700}
-section{padding:90px 0}
-h2{font-size:clamp(30px,4.4vw,44px);font-weight:700;margin:14px 0 40px;letter-spacing:.01em}
-.rev{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:700}
+section{padding:100px 0}
+h2{font-size:clamp(32px,4.8vw,52px);font-weight:600;margin:14px 0 48px;letter-spacing:.01em;line-height:1.1}
+.rev{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rev.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rev{opacity:1;transform:none;transition:none}}
 
-/* topo */
-.top{position:sticky;top:0;z-index:10;background:rgba(12,14,18,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:14px;padding:16px 28px}
-.mark{width:40px;height:40px;border-radius:8px;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--gold);font-size:14px;flex:none}
-.top b{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.04em;font-size:16px}
-.top a.mini{margin-left:auto;background:var(--gold);color:var(--bg);padding:11px 24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;border-radius:6px;transition:all .2s}
-.top a.mini:hover{background:var(--gold-bright);transform:translateY(-1px)}
+/* ===== NAV ===== */
+.top{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,12,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);transition:all .3s}
+.top .wrap{display:flex;align-items:center;gap:16px;padding:18px 32px}
+.mark{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--gold);font-size:15px;flex:none;letter-spacing:.02em}
+.top .brand{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.04em;font-size:17px;color:var(--ink)}
+.top .brand span{color:var(--dim);font-weight:400;font-size:13px;display:block;letter-spacing:.02em;font-family:"Inter",sans-serif;margin-top:-2px}
+.top nav{display:flex;gap:32px;margin-left:auto;align-items:center}
+.top nav a{font-size:13px;color:var(--dim);font-weight:500;letter-spacing:.04em;transition:color .2s;position:relative}
+.top nav a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+.top nav a:hover{color:var(--ink)}
+.top nav a:hover::after{width:100%}
+.top a.cta-nav{background:var(--gold);color:var(--bg);padding:12px 28px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:8px;transition:all .25s}
+.top a.cta-nav:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 6px 20px var(--gold-glow)}
+@media(max-width:800px){.top nav{display:none}}
 
-/* hero */
-.hero{position:relative;min-height:min(88vh,760px);display:grid;align-items:center;overflow:hidden;padding:0}
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden;padding:0}
 .hero .bg{position:absolute;inset:0;z-index:0}
-.hero .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.25) contrast(1.1)}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,14,18,.96) 0%,rgba(12,14,18,.82) 45%,rgba(12,14,18,.35) 100%)}
-.hero .wrap{position:relative;z-index:1;padding:120px 28px 100px}
-.hero h1{font-size:clamp(38px,6.8vw,64px);line-height:1.04;margin:18px 0 22px;max-width:780px;font-weight:700;font-family:"Cormorant Garamond",serif}
-.hero h1 em{font-style:italic;color:var(--gold-bright)}
-.hero p.lead{color:var(--dim);max-width:520px;font-size:18px;margin-bottom:40px;line-height:1.65}
-.cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--bg);font-weight:800;padding:18px 36px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;transition:all .2s}
-.cta:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 8px 24px var(--gold-glow)}
-.badges{display:flex;gap:18px;flex-wrap:wrap;margin-top:44px}
-.badge{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;font-size:13px;color:var(--dim);min-width:170px;transition:all .2s}
-.badge:hover{border-color:var(--gold)}
-.badge b{display:block;color:var(--ink);font-size:15px;font-weight:800;margin-bottom:3px}
+.hero .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.22) contrast(1.15) saturate(.9)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,12,16,.97) 0%,rgba(10,12,16,.88) 40%,rgba(10,12,16,.45) 70%,rgba(10,12,16,.2) 100%)}
+.hero .veil2{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,12,16,1) 0%,rgba(10,12,16,0) 40%)}
+.hero .wrap{position:relative;z-index:1;padding:140px 32px 100px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero-left{max-width:640px}
+.hero .eyebrow{margin-bottom:20px}
+.hero h1{font-size:clamp(42px,7vw,72px);line-height:1.05;margin:0 0 24px;font-weight:600;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold3);font-weight:400}
+.hero .lead{color:var(--dim);font-size:18px;margin-bottom:40px;line-height:1.7;max-width:480px}
+.hero .cta-main{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--bg);font-weight:800;padding:18px 40px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border-radius:10px;transition:all .25s}
+.hero .cta-main:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px var(--gold-glow)}
+.hero .cta-sec{display:inline-flex;align-items:center;gap:8px;color:var(--dim);font-size:14px;font-weight:500;margin-left:24px;transition:color .2s}
+.hero .cta-sec:hover{color:var(--gold)}
+.hero .cta-sec svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:32px;border-top:1px solid var(--line2)}
+.hero-stat .num{font-family:"Cormorant Garamond",serif;font-size:42px;font-weight:600;color:var(--gold);line-height:1}
+.hero-stat .lbl{font-size:12px;color:var(--dimmer);margin-top:6px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.hero-right{position:relative}
+.hero-card{background:var(--panel);border:1px solid var(--line2);border-radius:var(--r2);padding:32px;backdrop-filter:blur(10px)}
+.hero-card h4{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;margin-bottom:20px;color:var(--ink2)}
+.hero-card .item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.hero-card .item:last-child{border-bottom:none}
+.hero-card .item-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-soft);display:grid;place-items:center;flex:none}
+.hero-card .item-icon svg{width:18px;height:18px;stroke:var(--gold);stroke-width:2;fill:none}
+.hero-card .item-text h5{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.hero-card .item-text p{font-size:12px;color:var(--dimmer);line-height:1.5}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-top:120px}.hero-right{display:none}}
 
-/* áreas */
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:all .2s ease}
-.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 32px var(--gold-glow)}
-.card .icon{width:44px;height:44px;border-radius:10px;background:var(--gold-soft);display:grid;place-items:center;margin-bottom:16px}
+/* ===== TRUST BAR ===== */
+.trust{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
+.trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.trust span{font-size:12px;color:var(--dimmer);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.trust .logos{display:flex;gap:40px;align-items:center;opacity:.5}
+.trust .logos span{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--dim);font-weight:500}
+
+/* ===== AREAS ===== */
+.areas{background:var(--bg)}
+.areas .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px}
+.areas .head p{color:var(--dim);max-width:420px;font-size:15px;line-height:1.7}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r2);padding:32px 28px;transition:all .3s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.card:hover{transform:translateY(-6px);border-color:var(--line3);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.card:hover::before{transform:scaleX(1)}
+.card .icon{width:48px;height:48px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;margin-bottom:20px;transition:all .3s}
+.card:hover .icon{background:rgba(201,168,76,.18)}
 .card .icon svg{width:22px;height:22px;stroke:var(--gold);stroke-width:2;fill:none}
-.card h3{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:.01em}
-.card p{color:var(--dim);font-size:14.5px;line-height:1.6}
+.card h3{font-size:17px;font-weight:700;margin-bottom:10px;letter-spacing:.01em}
+.card p{color:var(--dim);font-size:14px;line-height:1.65}
+.card .tag{display:inline-block;margin-top:16px;font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:6px 12px;background:var(--gold-soft);border-radius:6px}
 
-/* processo */
-.proc{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proc .grid3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
-.et .n{font-family:"Cormorant Garamond",serif;font-size:48px;color:var(--gold);line-height:1;font-weight:700;opacity:.3}
-.et h3{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:700;letter-spacing:.02em;margin:14px 0 8px}
-.et p{color:var(--dim);font-size:14.5px;line-height:1.6}
+/* ===== PROCESS ===== */
+.proc{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+.proc::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:3px;background:var(--gold)}
+.proc .grid3{grid-template-columns:repeat(3,1fr);gap:50px}
+.et{position:relative;padding-left:28px;border-left:2px solid var(--line2)}
+.et .n{font-family:"Cormorant Garamond",serif;font-size:56px;color:var(--gold);line-height:1;font-weight:300;opacity:.25;position:absolute;top:-8px;left:28px}
+.et h3{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;letter-spacing:.01em;margin:48px 0 12px;color:var(--ink2)}
+.et p{color:var(--dim);font-size:14.5px;line-height:1.7}
+.et .check{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:var(--dimmer)}
+.et .check svg{width:14px;height:14px;stroke:var(--gold);stroke-width:2.5;fill:none}
+@media(max-width:800px){.proc .grid3{grid-template-columns:1fr}}
 
-/* faixa */
-.band{position:relative;height:min(46vh,360px);overflow:hidden}
-.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.3) contrast(1.1)}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,14,18,.85) 0%,rgba(12,14,18,.3) 50%,rgba(12,14,18,.85) 100%)}
-.band .tag{position:absolute;left:28px;bottom:28px;background:var(--gold);color:var(--bg);font-family:"Cormorant Garamond",serif;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:14px 24px;border-radius:6px;z-index:2}
+/* ===== ABOUT / TEAM ===== */
+.about{background:var(--bg)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;height:480px;object-fit:cover;border-radius:var(--r2);filter:brightness(.85) contrast(1.1)}
+.about-img::after{content:"";position:absolute;inset:20px;border:1px solid var(--gold);border-radius:var(--r2);pointer-events:none;opacity:.3}
+.about-img .badge{position:absolute;bottom:32px;left:32px;background:var(--bg);border:1px solid var(--line2);padding:16px 24px;border-radius:var(--r);backdrop-filter:blur(10px)}
+.about-img .badge .num{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:600;color:var(--gold);line-height:1}
+.about-img .badge .txt{font-size:11px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;font-weight:600}
+.about h2{margin-bottom:20px}
+.about p{color:var(--dim);font-size:15.5px;line-height:1.8;margin-bottom:20px}
+.about .quote{border-left:3px solid var(--gold);padding-left:24px;margin:28px 0;font-style:italic;font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--ink2);line-height:1.6}
+.about .quote footer{font-style:normal;font-family:"Inter",sans-serif;font-size:12px;color:var(--dimmer);margin-top:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+@media(max-width:900px){.about .wrap{grid-template-columns:1fr}.about-img{display:none}}
 
-/* depoimentos */
-.dep blockquote{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px;font-size:15px;transition:all .2s}
-.dep blockquote:hover{border-color:var(--gold)}
-.dep .st{color:var(--gold);letter-spacing:.2em;display:block;margin-bottom:14px;font-size:12px;font-weight:700}
-.dep footer{margin-top:16px;color:var(--dim);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+/* ===== BAND ===== */
+.band{position:relative;height:min(50vh,420px);overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.35) contrast(1.15)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,12,16,.9) 0%,rgba(10,12,16,.4) 50%,rgba(10,12,16,.9) 100%)}
+.band .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.band h2{font-size:clamp(28px,4vw,44px);font-weight:600;margin-bottom:16px}
+.band p{color:var(--dim);font-size:16px;max-width:560px;line-height:1.7}
+.band .cta-band{display:inline-flex;align-items:center;gap:8px;margin-top:32px;background:transparent;color:var(--gold);border:1.5px solid var(--gold);padding:14px 36px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border-radius:10px;transition:all .25s}
+.band .cta-band:hover{background:var(--gold);color:var(--bg)}
 
-/* local e fim */
-.local .box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
-.local h3{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:700}
-.local p{color:var(--dim);font-size:15px;line-height:1.65}
-.local a.map{display:inline-block;margin-top:14px;color:var(--gold);border-bottom:2px solid var(--gold);font-size:13px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
+/* ===== TESTIMONIALS ===== */
+.dep{background:var(--bg2);border-top:1px solid var(--line)}
+.dep .grid3{gap:24px}
+.dep blockquote{background:var(--panel);border:1px solid var(--line2);border-radius:var(--r2);padding:36px 32px;transition:all .25s;position:relative}
+.dep blockquote::before{content:""";position:absolute;top:16px;right:24px;font-family:"Cormorant Garamond",serif;font-size:80px;color:var(--gold);opacity:.15;line-height:1}
+.dep blockquote:hover{border-color:var(--line3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.dep .stars{color:var(--gold);letter-spacing:.15em;display:block;margin-bottom:18px;font-size:13px;font-weight:700}
+.dep blockquote p{font-size:15.5px;color:var(--ink2);line-height:1.75;font-style:italic}
+.dep footer{margin-top:24px;display:flex;align-items:center;gap:14px}
+.dep footer .avatar{width:44px;height:44px;border-radius:50%;background:var(--line2);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--gold);font-size:16px}
+.dep footer .info .name{font-size:14px;font-weight:600;color:var(--ink)}
+.dep footer .info .loc{font-size:12px;color:var(--dimmer);margin-top:2px}
+
+/* ===== CONTACT ===== */
+.local{background:var(--bg)}
+.local .box{background:var(--panel);border:1px solid var(--line2);border-radius:var(--r2);padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.local h3{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:700}
+.local p{color:var(--dim);font-size:15px;line-height:1.8}
+.local .detail{margin-bottom:28px}
+.local .detail:last-child{margin-bottom:0}
+.local .detail b{display:block;color:var(--ink);font-size:15px;font-weight:600;margin-bottom:4px}
+.local a.map{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
 .local a.map:hover{opacity:.7}
-@media(max-width:700px){.local .box{grid-template-columns:1fr;padding:30px}}
-.fim{text-align:center;padding:100px 0 120px}
-.fim p{color:var(--dim);max-width:480px;margin:12px auto 34px;font-size:16px}
-footer.rodape{border-top:1px solid var(--line);padding:28px 0 100px;text-align:center;color:var(--dimmer);font-size:13px}
-footer.rodape a{color:var(--gold);font-weight:700}
+.local a.map svg{width:16px;height:16px;stroke:var(--gold);stroke-width:2;fill:none}
+.local .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.local .hours-grid div{font-size:13px;color:var(--dim);padding:10px 14px;background:var(--bg2);border-radius:8px;border:1px solid var(--line)}
+.local .hours-grid div b{color:var(--ink);font-size:12px;display:block;margin-bottom:2px}
+@media(max-width:800px){.local .box{grid-template-columns:1fr;padding:32px}}
 
-/* barra fixa mobile */
-.fixabar{position:fixed;left:0;right:0;bottom:0;z-index:19;display:none;background:var(--gold);color:var(--bg);text-align:center;padding:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:13px}
-@media(max-width:700px){.fixabar{display:block}}
+/* ===== FINAL CTA ===== */
+.fim{text-align:center;padding:120px 0 140px;background:var(--bg2);border-top:1px solid var(--line);position:relative}
+.fim::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:var(--gold)}
+.fim .eyebrow{margin-bottom:20px}
+.fim h2{font-size:clamp(32px,5vw,56px);font-weight:600;margin-bottom:20px}
+.fim p{color:var(--dim);max-width:520px;margin:0 auto 40px;font-size:17px;line-height:1.7}
+.fim .cta-fim{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--bg);font-weight:800;padding:20px 48px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;border-radius:12px;transition:all .25s}
+.fim .cta-fim:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 36px var(--gold-glow)}
+.fim .sub{color:var(--dimmer);font-size:13px;margin-top:20px}
 
-.zap{position:fixed;right:20px;bottom:82px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.55);z-index:20;transition:transform .2s}
-@media(min-width:701px){.zap{bottom:24px}}
-.zap:hover{transform:scale(1.07)}
+/* ===== FOOTER ===== */
+footer.rodape{border-top:1px solid var(--line);background:var(--bg);padding:48px 0 120px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+footer .left{display:flex;align-items:center;gap:16px}
+footer .left .mark{width:36px;height:36px;border-radius:8px}
+footer .left .brand{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:16px}
+footer .left .brand span{font-family:"Inter",sans-serif;font-size:11px;color:var(--dimmer);display:block;margin-top:-2px}
+footer .right{font-size:12px;color:var(--dimmer)}
+footer .right a{color:var(--gold);font-weight:600;transition:opacity .2s}
+footer .right a:hover{opacity:.7}
+
+/* ===== WHATSAPP ===== */
+.zap{position:fixed;right:24px;bottom:24px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 32px rgba(0,0,0,.5);z-index:100;transition:all .25s}
+.zap:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 16px 40px rgba(37,211,102,.3)}
+.zap svg{width:30px;height:30px}
+
+/* ===== MOBILE BAR ===== */
+.fixabar{position:fixed;left:0;right:0;bottom:0;z-index:99;display:none;background:var(--gold);color:var(--bg);text-align:center;padding:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:13px;transition:all .2s}
+.fixabar:hover{background:var(--gold2)}
+@media(max-width:700px){.fixabar{display:block}body{padding-bottom:60px}}
+
 a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-@media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}.cta:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.zap:hover{transform:none}.card:hover{transform:none}}
 </style>
 <base target="_blank">
 </head>
 <body>
 
-<div class="hazard" style="height:4px;background:repeating-linear-gradient(-45deg,var(--gold) 0 10px,var(--bg) 10px 20px)" aria-hidden="true"></div>
-
-<nav class="top">
+<!-- NAV -->
+<nav class="top" id="nav">
   <div class="wrap">
     <span class="mark">M</span>
-    <b>Moreira & Associados</b>
-    <a class="mini" data-wa href="#">Consulta</a>
+    <div class="brand">Moreira & Associados<span>Advocacia · São José/SC</span></div>
+    <nav>
+      <a href="#areas">Áreas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#processo">Processo</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="cta-nav" data-wa href="#">Agendar</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
   <div class="bg">
-    <img src="https://img.magnific.com/e246af9e40559cd288c901f4ff04e9e30206a96e.jpg" alt="Balança da justiça dourada em fundo escuro" onerror="this.style.display='none'">
+    <img src="https://img.magnific.com/d5c71aa03d560df35a45f4dca5a96be4861d9e43.jpg" alt="Escritório de advocacia luxuoso" onerror="this.style.display='none'">
   </div>
   <div class="veil" aria-hidden="true"></div>
+  <div class="veil2" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="eyebrow">Advocacia · Centro, São José/SC</span>
-    <h1>Justiça com <em>clareza e proximidade.</em></h1>
-    <p class="lead">Atendimento humanizado em direito civil, trabalhista, família e empresarial. Você entende cada passo do processo antes dele acontecer.</p>
-    <a class="cta" data-wa href="#">Agendar consulta pelo WhatsApp</a>
-    <div class="badges">
-      <div class="badge"><b>15+ anos</b>de experiência</div>
-      <div class="badge"><b>Atendimento</b>100% humanizado</div>
-      <div class="badge"><b>Sem letras</b>miúdas</div>
+    <div class="hero-left rev">
+      <span class="eyebrow">Advocacia · Centro, São José/SC</span>
+      <h1>Justiça com <em>clareza, proximidade e excelência.</em></h1>
+      <p class="lead">Há mais de 15 anos, o Moreira & Associados transforma complexidade jurídica em soluções claras. Atendimento humanizado em direito civil, trabalhista, família e empresarial.</p>
+      <div>
+        <a class="cta-main" data-wa href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Agendar consulta
+        </a>
+        <a class="cta-sec" href="#areas">
+          <svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          Conhecer áreas de atuação
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">15+</div><div class="lbl">Anos de experiência</div></div>
+        <div class="hero-stat"><div class="num">500+</div><div class="lbl">Casos atendidos</div></div>
+        <div class="hero-stat"><div class="num">98%</div><div class="lbl">Taxa de satisfação</div></div>
+      </div>
+    </div>
+    <div class="hero-right rev">
+      <div class="hero-card">
+        <h4>Áreas de atuação</h4>
+        <div class="item">
+          <div class="item-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="item-text"><h5>Direito Civil</h5><p>Contratos, indenizações e consumidor</p></div>
+        </div>
+        <div class="item">
+          <div class="item-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <div class="item-text"><h5>Direito de Família</h5><p>Divórcio, guarda e sucessões</p></div>
+        </div>
+        <div class="item">
+          <div class="item-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="item-text"><h5>Direito Trabalhista</h5><p>Reclamações e defesa empresarial</p></div>
+        </div>
+        <div class="item">
+          <div class="item-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="item-text"><h5>Direito Empresarial</h5><p>Sociedades e assessoria jurídica</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<section id="areas">
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <span>Reconhecido por</span>
+    <div class="logos">
+      <span>OAB/SC</span>
+      <span>·</span>
+      <span>IBDFAM</span>
+      <span>·</span>
+      <span>ABAT</span>
+      <span>·</span>
+      <span>IAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
   <div class="wrap rev">
-    <span class="eyebrow">Áreas de atuação</span>
-    <h2>Como podemos ajudar</h2>
+    <div class="head">
+      <div>
+        <span class="eyebrow">Áreas de atuação</span>
+        <h2>Como podemos ajudar</h2>
+      </div>
+      <p>Cada área é conduzida com a mesma dedicação: entender seu caso a fundo e traçar a melhor estratégia.</p>
+    </div>
     <div class="grid3">
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>Direito Civil</h3>
-        <p>Contratos, indenizações, responsabilidade civil e direito do consumidor.</p>
+        <p>Contratos, indenizações, responsabilidade civil, direito do consumidor e ações possessórias.</p>
+        <span class="tag">Consultoria · Litígio</span>
       </div>
       <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
         <h3>Direito de Família</h3>
-        <p>Divórcio, guarda, pensão alimentícia e inventário com sensibilidade.</p>
+        <p>Divórcio, guarda, pensão alimentícia, inventário, partilha e planejamento sucessório.</p>
+        <span class="tag">Mediação · Judicial</span>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <h3>Direito Trabalhista</h3>
-        <p>Reclamações, acordos, rescisões e defesa de empresas.</p>
+        <p>Reclamações trabalhistas, acordos, rescisões e defesa de empresas em todas as instâncias.</p>
+        <span class="tag">Reclamação · Defesa</span>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <h3>Direito Empresarial</h3>
-        <p>Sociedades, contratos comerciais, recuperação judicial e assessoria.</p>
+        <p>Sociedades, contratos comerciais, recuperação judicial, assessoria contínua e compliance.</p>
+        <span class="tag">Societário · Contratos</span>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
         <h3>Direito Previdenciário</h3>
-        <p>Aposentadoria, auxílio-doença, LOAS e revisão de benefícios.</p>
+        <p>Aposentadoria, auxílio-doença, LOAS, revisão de benefícios e ações contra o INSS.</p>
+        <span class="tag">Aposentadoria · Revisão</span>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Consultoria Preventiva</h3>
-        <p>Análise de contratos e riscos jurídicos antes do problema aparecer.</p>
+        <p>Análise de contratos, due diligence e mapeamento de riscos jurídicos antes do problema.</p>
+        <span class="tag">Prevenção · Análise</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="proc">
+<!-- PROCESS -->
+<section class="proc" id="processo">
   <div class="wrap rev">
     <span class="eyebrow">Nosso compromisso</span>
     <h2>Como <span style="color:var(--gold)">trabalhamos</span></h2>
     <div class="grid3">
-      <div class="et"><div class="n">01</div><h3>Escuta ativa</h3><p>Você conta sua história. A gente ouve sem interromper e sem julgar.</p></div>
-      <div class="et"><div class="n">02</div><h3>Diagnóstico claro</h3><p>Explicamos o cenário jurídico em português simples, sem advogadês.</p></div>
-      <div class="et"><div class="n">03</div><h3>Estratégia e ação</h3><p>Caminho definido, prazos transparentes e acompanhamento em cada etapa.</p></div>
+      <div class="et">
+        <div class="n">01</div>
+        <h3>Escuta ativa</h3>
+        <p>Você conta sua história. A gente ouve sem interromper, sem julgar e com atenção total aos detalhes que fazem diferença no caso.</p>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Atendimento personalizado</div>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sigilo absoluto</div>
+      </div>
+      <div class="et">
+        <div class="n">02</div>
+        <h3>Diagnóstico claro</h3>
+        <p>Explicamos o cenário jurídico em português simples. Sem advogadês. Você entende cada passo antes dele acontecer.</p>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Relatório detalhado</div>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sem letras miúdas</div>
+      </div>
+      <div class="et">
+        <div class="n">03</div>
+        <h3>Estratégia e ação</h3>
+        <p>Caminho definido, prazos transparentes e acompanhamento em cada etapa. Você nunca fica no escuro sobre seu processo.</p>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Acompanhamento contínuo</div>
+        <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Comunicação direta</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="wrap rev">
+    <div class="about-img">
+      <img src="https://img.magnific.com/41b22942bdd14aff2ed6af2579cdc8f63531d1e6.jpg" alt="Sala de reuniões do escritório" loading="lazy" onerror="this.style.display='none'">
+      <div class="badge"><div class="num">15+</div><div class="txt">Anos de atuação</div></div>
+    </div>
+    <div>
+      <span class="eyebrow">Sobre o escritório</span>
+      <h2>Tradição e inovação <span style="color:var(--gold)">juntas</span></h2>
+      <p>O Moreira & Associados nasceu da convicção de que a advocacia pode ser diferente. Fundado em 2009, em São José/SC, o escritório une a solidez da tradição jurídica à agilidade das soluções modernas.</p>
+      <p>Nossa equipe é formada por advogados especializados que acreditam no poder da comunicação clara. Cada cliente é tratado como parceiro, cada caso é analisado com a dedicação que ele merece.</p>
+      <div class="quote">
+        "A justiça não é apenas sobre leis. É sobre pessoas, histórias e encontrar o caminho certo para cada uma delas."
+        <footer>— Dr. Carlos Moreira, Fundador</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
 <div class="band">
-  <img src="https://img.magnific.com/76a5dad8fbab7f2796f6955bcc78eede5b42ca0e.jpg" alt="Escritório de advocacia" loading="lazy" onerror="this.style.display='none'">
-  <div class="tag">OAB/SC ativa · Atendimento presencial e online</div>
+  <img src="https://img.magnific.com/d5c71aa03d560df35a45f4dca5a96be4861d9e43.jpg" alt="Ambiente do escritório" loading="lazy" onerror="this.style.display='none'">
+  <div class="wrap">
+    <h2 class="serif">OAB/SC ativa · Atendimento presencial e online</h2>
+    <p>Seja qual for a sua necessidade jurídica, estamos prontos para atender com a mesma excelência, seja no escritório ou à distância.</p>
+    <a class="cta-band" data-wa href="#">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Falar pelo WhatsApp
+    </a>
+  </div>
 </div>
 
-<section class="dep">
+<!-- TESTIMONIALS -->
+<section class="dep" id="depoimentos">
   <div class="wrap rev">
-    <span class="eyebrow">Clientes</span>
+    <span class="eyebrow">Depoimentos</span>
     <h2>Palavra de quem <span style="color:var(--gold)">confia</span></h2>
     <div class="grid3">
-      <blockquote><span class="st">★★★★★</span>Explicou meu processo trabalhista de um jeito que eu finalmente entendi. Ganhei a causa.<footer>Roberto S. · Centro</footer></blockquote>
-      <blockquote><span class="st">★★★★★</span>Divórcio resolvido em 3 meses. Sem drama, sem enrolação. Profissionalismo total.<footer>Ana C. · Florianópolis</footer></blockquote>
-      <blockquote><span class="st">★★★★★</span>Revisou todos os contratos da minha empresa. Hoje durmo mais tranquilo.<footer>Carlos M. · São José</footer></blockquote>
+      <blockquote>
+        <span class="stars">★★★★★</span>
+        <p>"Explicou meu processo trabalhista de um jeito que eu finalmente entendi. A transparência em cada etapa me deu segurança. Ganhei a causa."</p>
+        <footer>
+          <div class="avatar">RS</div>
+          <div class="info"><div class="name">Roberto Silva</div><div class="loc">Centro, São José/SC</div></div>
+        </footer>
+      </blockquote>
+      <blockquote>
+        <span class="stars">★★★★★</span>
+        <p>"Divórcio resolvido em 3 meses. Sem drama, sem enrolação. O acompanhamento humanizado fez toda a diferença num momento tão difícil."</p>
+        <footer>
+          <div class="avatar">AC</div>
+          <div class="info"><div class="name">Ana Carolina</div><div class="loc">Florianópolis, SC</div></div>
+        </footer>
+      </blockquote>
+      <blockquote>
+        <span class="stars">★★★★★</span>
+        <p>"Revisou todos os contratos da minha empresa e identificou riscos que eu nem imaginava. Hoje durmo mais tranquilo sabendo que estou protegido."</p>
+        <footer>
+          <div class="avatar">CM</div>
+          <div class="info"><div class="name">Carlos Mendes</div><div class="loc">São José, SC</div></div>
+        </footer>
+      </blockquote>
     </div>
   </div>
 </section>
 
-<section class="local" id="local">
+<!-- CONTACT -->
+<section class="local" id="contato">
   <div class="wrap rev">
     <div class="box">
       <div>
         <h3>Endereço</h3>
-        <p>Av. Exemplo, 555 · sala 12 · Centro<br>São José/SC</p>
-        <a class="map" href="https://maps.google.com/?q=Centro,+S%C3%A3o+Jos%C3%A9+SC" target="_blank" rel="noopener">Ver no mapa</a>
+        <div class="detail">
+          <b>Escritório Moreira & Associados</b>
+          <p>Av. Exemplo, 555 · sala 12 · Centro<br>São José/SC · CEP 88103-000</p>
+          <a class="map" href="https://maps.google.com/?q=Centro,+S%C3%A3o+Jos%C3%A9+SC" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver no Google Maps
+          </a>
+        </div>
+        <div class="detail">
+          <b>Contato</b>
+          <p>(48) 99999-9999<br>contato@moreiraadvocacia.com.br</p>
+        </div>
       </div>
       <div>
-        <h3>Horários</h3>
-        <p>Segunda a sexta · 8h às 18h<br>Atendimento online · sob agendamento</p>
+        <h3>Horários de atendimento</h3>
+        <div class="hours-grid">
+          <div><b>Segunda a Sexta</b>8h às 18h</div>
+          <div><b>Sábado</b>9h às 13h (sob agendamento)</div>
+          <div><b>Atendimento Online</b>Sob agendamento</div>
+          <div><b>Plantão Jurídico</b>24h para clientes</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FINAL CTA -->
 <section class="fim">
   <div class="wrap rev">
     <span class="eyebrow">Primeira conversa</span>
     <h2 class="serif">Seu caso começa com uma boa escuta.</h2>
-    <p>Agende uma consulta pelo WhatsApp. Vamos entender sua situação e traçar o melhor caminho juntos.</p>
-    <a class="cta" data-wa href="#">Agendar consulta</a>
+    <p>Agende uma consulta pelo WhatsApp. Vamos entender sua situação, avaliar as possibilidades e traçar o melhor caminho juntos — sem compromisso.</p>
+    <a class="cta-fim" data-wa href="#">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Agendar consulta gratuita
+    </a>
+    <p class="sub">Resposta em até 2 horas em horário comercial</p>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="rodape">
-  Moreira & Associados · página modelo com conteúdo fictício ·
-  <a href="index.html">quer uma página assim para o seu escritório?</a>
+  <div class="wrap">
+    <div class="left">
+      <span class="mark">M</span>
+      <div class="brand">Moreira & Associados<span>Advocacia · São José/SC</span></div>
+    </div>
+    <div class="right">
+      Página modelo com conteúdo fictício · <a href="#">Quer uma página assim?</a>
+    </div>
+  </div>
 </footer>
 
+<!-- MOBILE BAR -->
 <a class="fixabar" data-wa href="#">Agendar consulta no WhatsApp</a>
 
+<!-- WHATSAPP -->
 <a class="zap" data-wa href="#" aria-label="Conversar no WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.9 2.4 6.8L5 29l8.1-2.1c.9.3 1.9.4 2.9.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"/><path fill="#25d366" d="M12.9 9.9c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.4 6.9 6 3.4 1.3 4.1 1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4-.3-.2-2-1-2.6-1.2-.3-.1-.6-.2-.9.1-.2.3-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-2.4-1.2-4-2.7-5.1-5-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.8.2-.3.1-.6 0-.8-.1-.2-.7-1.9-1-2.8z"/></svg>
+  <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16 3C9.4 3 4 8.1 4 14.4c0 2.5.9 4.9 2.4 6.8L5 29l8.1-2.1c.9.3 1.9.4 2.9.4 6.6 0 12-5.1 12-11.4S22.6 3 16 3z"/><path fill="#25d366" d="M12.9 9.9c-.3-.6-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.4 6.9 6 3.4 1.3 4.1 1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-1 .3-1.8.2-1.9-.1-.2-.3-.3-.6-.4-.3-.2-2-1-2.6-1.2-.3-.1-.6-.2-.9.1-.2.3-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-2.4-1.2-4-2.7-5.1-5-.3-.5 0-.7.2-1 .2-.2.4-.5.6-.8.2-.3.1-.6 0-.8-.1-.2-.7-1.9-1-2.8z"/></svg>
 </a>
 
 <script>
@@ -245,10 +511,19 @@ document.querySelectorAll("[data-wa]").forEach(function(a){
   a.href = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(MSG);
   a.target = "_blank"; a.rel = "noopener";
 });
+
+// Intersection Observer for animations
 var io = new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
-},{threshold:.12});
+},{threshold:.1, rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll(".rev").forEach(function(el){ io.observe(el); });
+
+// Navbar scroll effect
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 50){ nav.style.background = 'rgba(10,12,16,.98)'; nav.style.borderColor = 'var(--line2)'; }
+  else{ nav.style.background = 'rgba(10,12,16,.92)'; nav.style.borderColor = 'var(--line)'; }
+});
 </script>
 </body>
 </html>
